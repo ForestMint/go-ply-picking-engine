@@ -1,0 +1,19 @@
+name: go-ply-picking-engine
+
+channels:
+- conda-forge
+- pytorch
+- defaults
+
+dependencies:
+- python=3.8.19
+- pip=23.3.1
+- pip :
+  - sente==0.4.0
+  - flask==3.0.3
+
+
+
+
+
+
