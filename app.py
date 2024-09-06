@@ -6,19 +6,21 @@ import random
 
 @app.route('/request_ply')
 def request_ply():
+  #return {"result":"D4"}
   game = request.args.get('game')
-
+  size = 19
 
   while True:
-    a=random.randint(1, 19)
-    b=random.randint(1, 19)
+    a=random.randint(1, size)
+    b=random.randint(1, size)
     try:
       game.play(a, b)
-      return {"ply":"ply"}
+      game.step_up()
+      return {"result":"D4"}
     except:
-      pass
+      return {"result":None}
   
   
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port="12345")
+    app.run(host="127.0.0.1", port="5001")
